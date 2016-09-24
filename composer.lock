@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0fc3c3466e8f4825617bb164f1334e1e",
-    "content-hash": "9783d2175fceca1cfa439f37d8dbd716",
+    "hash": "9a9891778080622c95e68a1a38e04a8d",
+    "content-hash": "16777948613bbd2fe3f5380eacc12959",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -363,48 +363,6 @@
                 "yii2"
             ],
             "time": "2016-08-14 02:52:21"
-        },
-        {
-            "name": "dmstr/yii2-web",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dmstr/yii2-web.git",
-                "reference": "798c20947f2a83ee36005e4810e97780f55cfc44"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-web/zipball/798c20947f2a83ee36005e4810e97780f55cfc44",
-                "reference": "798c20947f2a83ee36005e4810e97780f55cfc44",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "2.0.*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "dmstr\\web\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Christopher Stebe",
-                    "email": "c.stebe@herzogkommunikation.de"
-                }
-            ],
-            "description": "Yii2 Framework web traits",
-            "keywords": [
-                "behaviors",
-                "extension",
-                "traits",
-                "yii2"
-            ],
-            "time": "2016-09-15 16:23:12"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -3811,7 +3769,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "fredyns/yii2-daerah-indonesia": 20,
-        "dmstr/yii2-web": 20,
         "mdmsoft/yii2-upload-file": 20,
         "dektrium/yii2-user": 20,
         "schmunk42/yii2-giiant": 20

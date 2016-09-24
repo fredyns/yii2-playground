@@ -26,7 +26,6 @@
         "cornernote/yii2-returnurl": "*",
         "kartik-v/yii2-icons": "^1.4",
         "fredyns/yii2-daerah-indonesia": "dev-master",
-        "dmstr/yii2-web": "dev-master",
         "mdmsoft/yii2-upload-file": "dev-master"
     },
     "require-dev": {
