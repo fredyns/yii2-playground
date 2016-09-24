@@ -1,63 +1,88 @@
 <?php
-
-$params = require(__DIR__ . '/params.php');
+$params = require(__DIR__.'/params.php');
 
 $config = [
-    'id' => 'basic',
-    'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
-    'components' => [
-        'request' => [
+    'id'            => 'yii2-playground',
+    'name'          => 'Yii 2 Playground',
+    'language'      => $params['language'],
+    'timeZone'      => $params['timeZone'],
+    'basePath'      => dirname(__DIR__),
+    'bootstrap'     => ['log'],
+    'components'    => [
+        'request'      => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '',
+            'cookieValidationKey' => 'GkjkF$AbfLKASNFf',
         ],
-        'cache' => [
+        'session'      => [
+            'class'        => 'yii\web\DbSession',
+            'sessionTable' => 'yii_session',
+        ],
+        'cache'        => [
             'class' => 'yii\caching\FileCache',
         ],
-        'user' => [
-            'identityClass' => 'app\models\User',
+        'user'         => [
+            'identityClass'   => 'app\models\User',
             'enableAutoLogin' => true,
+        ],
+        'formatter'    => [
+            'locale' => 'id_ID',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
-        ],
-        'log' => [
+        'mailer'       => $params['mailer'],
+        'log'          => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets' => [
+            'targets'    => [
                 [
-                    'class' => 'yii\log\FileTarget',
+                    'class'  => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
             ],
         ],
-        'db' => require(__DIR__ . '/db.php'),
-        /*
-        'urlManager' => [
+        'db'           => require(__DIR__.'/db.php'),
+        'urlManager'   => [
             'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
+            'showScriptName'  => false,
+        ],
+        'view'         => [
+            'theme' => [
+                'pathMap' => [
+                    '@dektrium/user/views' => '@app/views/user'
+                ],
             ],
         ],
-        */
     ],
-    'params' => $params,
+    'modules'       => [
+        'user'            => [
+            'class'                  => 'dektrium\user\Module',
+            'enableUnconfirmedLogin' => TRUE,
+            'admins'                 => $params['admins'],
+            'modelMap'               => [
+                'User'    => 'app\models\User',
+                'Profile' => 'app\models\Profile',
+            ],
+            'controllerMap'          => require(__DIR__.'/user-controllerMap.php'),
+        ],
+        'daerahIndonesia' => [
+            'class' => '\fredyns\daerahIndonesia\Module',
+        ]
+    ],
+    'controllerMap' => [
+        'file' => 'mdm\\upload\\FileController', // use to show or download file
+    ],
+    'params'        => $params,
 ];
 
-if (YII_ENV_DEV) {
+if (YII_ENV_DEV)
+{
     // configuration adjustments for 'dev' environment
-    $config['bootstrap'][] = 'debug';
+    $config['bootstrap'][]      = 'debug';
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
     ];
 
-    $config['bootstrap'][] = 'gii';
+    $config['bootstrap'][]    = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
     ];

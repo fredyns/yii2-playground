@@ -1,16 +1,10 @@
-Yii 2 Basic Project Template
+Yii 2 Playground
 ============================
 
-Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-rapidly creating small projects.
+Copied from Yii 2 Basic Project Template
+to be used as playground, experiment or anything fun :D
 
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
-
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-app-basic/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-basic/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-app-basic.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-basic)
+Please contact me if you want some feature to be added into this template.
 
 DIRECTORY STRUCTURE
 -------------------
@@ -68,14 +62,28 @@ You can then install this project template using the following command:
 
 ~~~
 php composer.phar global require "fxp/composer-asset-plugin:~1.1.1"
-php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic basic
+php composer.phar create-project --prefer-dist --stability=dev fredyns/yii2-playground playground
 ~~~
 
-Now you should be able to access the application through the following URL, assuming `basic` is the directory
+### Setup Database
+
+create your database & setup your configuration in `/config/db/php`.
+
+as you can see, there is timezone command in the db config.
+
+this template using database as session storage.
+import the structure from `/database/changelog/2016-08-21_21-17_yii-session-table.sql`
+
+FYI, i did not create any migration, all database modification will be recorded in `/database/changelog/`
+import them in order.
+
+### Open Your Site
+
+Now you should be able to access the application through the following URL, assuming `playground` is the directory
 directly under the Web root.
 
 ~~~
-http://localhost/basic/web/
+http://localhost/playground/web/
 ~~~
 
 
@@ -89,9 +97,9 @@ Edit the file `config/db.php` with real data, for example:
 ```php
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'dsn' => 'mysql:host=localhost;dbname=yii2playground',
     'username' => 'root',
-    'password' => '1234',
+    'password' => 'root',
     'charset' => 'utf8',
 ];
 ```

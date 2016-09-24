@@ -1,29 +1,43 @@
 {
-    "name": "yiisoft/yii2-app-basic",
-    "description": "Yii 2 Basic Project Template",
-    "keywords": ["yii2", "framework", "basic", "project template"],
-    "homepage": "http://www.yiiframework.com/",
+    "name": "fredyns/yii2-playground",
+    "description": "Yii 2 Playground",
+    "keywords": [
+        "yii2",
+        "framework",
+        "basic",
+        "project template",
+        "playground"
+    ],
+    "homepage": "http://fredyns.net/",
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
-        "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "http://www.yiiframework.com/wiki/",
-        "irc": "irc://irc.freenode.net/yii",
-        "source": "https://github.com/yiisoft/yii2"
+        "issues": "https://github.com/fredyns/yii2-playground/issues?state=open",
+        "source": "https://github.com/fredyns/yii2-playground"
     },
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.5",
         "yiisoft/yii2-bootstrap": "*",
-        "yiisoft/yii2-swiftmailer": "*"
+        "yiisoft/yii2-swiftmailer": "*",
+        "fredyns/yii2-components": "*",
+        "fredyns/yii2-lbac": "*",
+        "cornernote/yii2-returnurl": "*",
+        "kartik-v/yii2-icons": "^1.4",
+        "fredyns/yii2-daerah-indonesia": "dev-master",
+        "dmstr/yii2-web": "dev-master",
+        "mdmsoft/yii2-upload-file": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
         "yiisoft/yii2-debug": "*",
         "yiisoft/yii2-gii": "*",
-        "yiisoft/yii2-faker": "*"
+        "yiisoft/yii2-faker": "*",
+        "dektrium/yii2-user": "0.9.*@dev",
+        "dmstr/yii2-adminlte-asset": "^2.3",
+        "schmunk42/yii2-giiant": "@dev",
+        "kartik-v/yii2-widgets": "^3.4"
     },
     "config": {
         "process-timeout": 1800
@@ -49,6 +63,10 @@
         "asset-installer-paths": {
             "npm-asset-library": "vendor/npm",
             "bower-asset-library": "vendor/bower"
-        }
+        },
+        "asset-vcs-driver-options": {
+            "github-no-api": true
+        },
+        "asset-pattern-skip-version": "(-build|-patch)"
     }
 }
