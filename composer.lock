@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9a9891778080622c95e68a1a38e04a8d",
-    "content-hash": "16777948613bbd2fe3f5380eacc12959",
+    "hash": "21f33fcee443cc6c7b39629422b735c8",
+    "content-hash": "87094b23f07d7109659e989b49e9b5b6",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -503,12 +503,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fredyns/yii2-daerah-indonesia.git",
-                "reference": "d6d58f2f425b4fc6695ab3898eab86c7d6bcd726"
+                "reference": "c60a108a1faebbaf1d7e878a90e808674f8be99b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fredyns/yii2-daerah-indonesia/zipball/d6d58f2f425b4fc6695ab3898eab86c7d6bcd726",
-                "reference": "d6d58f2f425b4fc6695ab3898eab86c7d6bcd726",
+                "url": "https://api.github.com/repos/fredyns/yii2-daerah-indonesia/zipball/c60a108a1faebbaf1d7e878a90e808674f8be99b",
+                "reference": "c60a108a1faebbaf1d7e878a90e808674f8be99b",
                 "shasum": ""
             },
             "require": {
@@ -539,7 +539,7 @@
                 "lbac",
                 "yii2"
             ],
-            "time": "2016-09-23 13:43:00"
+            "time": "2016-09-25 13:43:48"
         },
         {
             "name": "fredyns/yii2-lbac",
@@ -3768,8 +3768,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "fredyns/yii2-daerah-indonesia": 20,
         "mdmsoft/yii2-upload-file": 20,
+        "fredyns/yii2-daerah-indonesia": 20,
         "dektrium/yii2-user": 20,
         "schmunk42/yii2-giiant": 20
     },
