@@ -69,6 +69,39 @@ use yii\helpers\Url;
                         'icon'   => 'fa fa-file-text',
                         'url'    => ['#'],
                     ],
+                    ['label' => 'Module', 'options' => ['class' => 'header']],
+                    [
+                        'label' => 'Daerah Indonesia',
+                        'icon'  => 'fa fa-map-o',
+                        'url'   => '#',
+                        'items' => [
+                            [
+                                'label' => 'Provinsi',
+                                'icon'  => 'fa fa-map-marker',
+                                'url'   => ['/daerah-indonesia/provinsi'],
+                            ],
+                            [
+                                'label' => 'Kota/Kabupaten',
+                                'icon'  => 'fa fa-map-marker',
+                                'url'   => ['/daerah-indonesia/kota'],
+                            ],
+                            [
+                                'label' => 'Kecamatan',
+                                'icon'  => 'fa fa-map-marker',
+                                'url'   => ['/daerah-indonesia/kecamatan'],
+                            ],
+                            [
+                                'label' => 'Kelurahan',
+                                'icon'  => 'fa fa-map-marker',
+                                'url'   => ['/daerah-indonesia/kelurahan'],
+                            ],
+                            [
+                                'label' => 'Kodepos',
+                                'icon'  => 'fa fa-map-marker',
+                                'url'   => ['/daerah-indonesia/kodepos'],
+                            ],
+                        ],
+                    ],
                     ['label' => 'Development', 'options' => ['class' => 'header']],
                     [
                         'label' => 'Yii2',
