@@ -503,12 +503,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fredyns/yii2-daerah-indonesia.git",
-                "reference": "c60a108a1faebbaf1d7e878a90e808674f8be99b"
+                "reference": "3e9e54871f8bafe7d3ba7e6f781d7c4c5eb04a36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fredyns/yii2-daerah-indonesia/zipball/c60a108a1faebbaf1d7e878a90e808674f8be99b",
-                "reference": "c60a108a1faebbaf1d7e878a90e808674f8be99b",
+                "url": "https://api.github.com/repos/fredyns/yii2-daerah-indonesia/zipball/3e9e54871f8bafe7d3ba7e6f781d7c4c5eb04a36",
+                "reference": "3e9e54871f8bafe7d3ba7e6f781d7c4c5eb04a36",
                 "shasum": ""
             },
             "require": {
@@ -539,7 +539,7 @@
                 "lbac",
                 "yii2"
             ],
-            "time": "2016-09-25 13:43:48"
+            "time": "2016-09-27 08:46:39"
         },
         {
             "name": "fredyns/yii2-lbac",
