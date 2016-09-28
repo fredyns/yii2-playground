@@ -54,7 +54,7 @@ $config = [
         ],
     ],
     'modules'       => [
-        'user'            => [
+        'user'             => [
             'class'                  => 'dektrium\user\Module',
             'enableUnconfirmedLogin' => TRUE,
             'admins'                 => $params['admins'],
@@ -62,10 +62,11 @@ $config = [
                 'User'    => 'app\models\User',
                 'Profile' => 'app\models\Profile',
             ],
-            'controllerMap'          => require(__DIR__.'/user-controllerMap.php'),
+            'controllerMap'          => require(__DIR__.'/module/user-controllerMap.php'),
         ],
-        'daerahIndonesia' => [
-            'class' => '\fredyns\daerahIndonesia\Module',
+        'daerah-indonesia' => [
+            'class'         => 'fredyns\daerahIndonesia\Module',
+            'controllerMap' => require(__DIR__.'/module/daerahIndonesia-controllerMap.php'),
         ]
     ],
     'controllerMap' => [
