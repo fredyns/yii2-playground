@@ -38,3 +38,6 @@ sudo chmod -R 775 upload
 
 sudo chgrp -R www-data filters
 sudo chmod -R 775 filters
+
+sudo chgrp -R www-data modules
+sudo chmod -R 775 modules
