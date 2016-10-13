@@ -22,11 +22,14 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "fredyns/yii2-components": "*",
-        "fredyns/yii2-lbac": "*",
-        "cornernote/yii2-returnurl": "*",
-        "kartik-v/yii2-icons": "^1.4",
+        "fredyns/yii2-lbac": "dev-master",
+        "kartik-v/yii2-icons": "@dev",
         "mdmsoft/yii2-upload-file": "dev-master",
-        "fredyns/yii2-daerah-indonesia": "dev-master"
+        "fredyns/yii2-daerah-indonesia": "dev-master",
+        "fredyns/yii2-giiant-template": "dev-master",
+        "cornernote/yii2-returnurl": "^1.0",
+        "kartik-v/yii2-grid": "^3.1",
+        "kartik-v/yii2-mpdf": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
