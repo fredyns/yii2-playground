@@ -7,6 +7,7 @@ use yii\helpers\ArrayHelper;
 use dektrium\user\models\Profile as BaseProfile;
 use fredyns\components\helpers\StringHelper;
 use fredyns\components\traits\ModelTool;
+use fredyns\components\traits\ModelBlame;
 
 /**
  * This is the model class for table "profile".
@@ -16,7 +17,8 @@ use fredyns\components\traits\ModelTool;
 class Profile extends BaseProfile
 {
 
-    use ModelTool;
+    use ModelTool,
+        ModelBlame;
 
     /**
      * @inheritdoc
