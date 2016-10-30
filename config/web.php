@@ -1,6 +1,5 @@
 <?php
 $params = require(__DIR__.'/params.php');
-$secret = require(__DIR__.'/secret.php');
 
 $config = [
     'id'            => 'yii2-playground',
@@ -11,7 +10,7 @@ $config = [
     'bootstrap'     => ['log'],
     'components'    => [
         'request'      => [
-            'cookieValidationKey' => $secret['cookieValidationKey'],
+            'cookieValidationKey' => 'GkjkF$Ab3fLK#ASNFfa%GD',
         ],
         'response'     => [
             'formatters' => [
@@ -39,7 +38,7 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'mailer'       => $secret['mailer'],
+        'mailer'       => $params['mailer'],
         'log'          => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets'    => [
@@ -66,7 +65,7 @@ $config = [
         'user'             => [
             'class'                  => 'dektrium\user\Module',
             'enableUnconfirmedLogin' => TRUE,
-            'admins'                 => $secret['admins'],
+            'admins'                 => $params['admins'],
             'modelMap'               => [
                 'User'    => 'app\models\User',
                 'Profile' => 'app\models\Profile',
@@ -79,6 +78,9 @@ $config = [
         'daerah-indonesia' => [
             'class'         => 'fredyns\daerahIndonesia\Module',
             'controllerMap' => require(__DIR__.'/module/daerahIndonesia-controllerMap.php'),
+        ],
+        'abcde'            => [
+            'class' => 'app\modules\tmp\Module',
         ],
     ],
     'controllerMap' => [
