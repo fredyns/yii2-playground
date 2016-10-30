@@ -9,25 +9,24 @@ use yii\helpers\Url;
 
         <!-- Sidebar user panel -->
         <div class="user-panel">
-            <div class="pull-left image">
+            <div class="pull-left image img-circle" style="width: 45px; height: 45px; overflow: hidden">
 
                 <?php
                 $profile = Yii::$app->user->identity->profile;
 
                 if (!empty($profile->picture_id))
                 {
-
                     echo Html::img(
-                        ['/file', 'id' => $profile->picture_id],
-                        [
-                        'class' => 'img-circle',
+                        ['/file', 'id' => $profile->picture_id], [
+                        'class' => '',
                         'alt'   => $profile->user->username,
+                        'style' => 'max-length: 45px; max-width: 45px;',
                         ]
                     );
                 }
                 else
                 {
-                    Html::img('@web/image/user-160.png', ['class' => "img-circle", 'alt' => "User Image"]);
+                    echo Html::img('@web/image/user-160.png', ['class' => "img-circle", 'alt' => "User Image"]);
                 }
                 ?>
             </div>

@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Dektrium project.
  *
@@ -18,11 +17,9 @@ use yii\widgets\ActiveForm;
  * @var $model dektrium\user\models\SettingsForm
  */
 
-$this->title = Yii::t('user', 'Account settings');
+$this->title                   = Yii::t('user', 'Account settings');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
-<?= $this->render('/_alert', ['module' => Yii::$app->getModule('user')]) ?>
 
 <div class="row">
     <div class="col-md-3">
@@ -34,16 +31,18 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= Html::encode($this->title) ?>
             </div>
             <div class="panel-body">
-                <?php $form = ActiveForm::begin([
-                    'id'          => 'account-form',
-                    'options'     => ['class' => 'form-horizontal'],
-                    'fieldConfig' => [
-                        'template'     => "{label}\n<div class=\"col-lg-9\">{input}</div>\n<div class=\"col-sm-offset-3 col-lg-9\">{error}\n{hint}</div>",
-                        'labelOptions' => ['class' => 'col-lg-3 control-label'],
-                    ],
-                    'enableAjaxValidation'   => true,
-                    'enableClientValidation' => false,
-                ]); ?>
+                <?php
+                $form                          = ActiveForm::begin([
+                        'id'                     => 'account-form',
+                        'options'                => ['class' => 'form-horizontal'],
+                        'fieldConfig'            => [
+                            'template'     => "{label}\n<div class=\"col-lg-9\">{input}</div>\n<div class=\"col-sm-offset-3 col-lg-9\">{error}\n{hint}</div>",
+                            'labelOptions' => ['class' => 'col-lg-3 control-label'],
+                        ],
+                        'enableAjaxValidation'   => true,
+                        'enableClientValidation' => false,
+                ]);
+                ?>
 
                 <?= $form->field($model, 'email') ?>
 

@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Dektrium project.
  *
@@ -18,12 +17,9 @@ use yii\widgets\ActiveForm;
  * @var dektrium\user\models\LoginForm $model
  * @var dektrium\user\Module           $module
  */
-
-$this->title = Yii::t('user', 'Sign in');
+$this->title                   = Yii::t('user', 'Sign in');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
-<?= $this->render('/_alert', ['module' => Yii::$app->getModule('user')]) ?>
 
 <div class="row">
     <div class="col-md-4 col-md-offset-4">
@@ -32,18 +28,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
             </div>
             <div class="panel-body">
-                <?php $form = ActiveForm::begin([
-                    'id'                     => 'login-form',
-                    'enableAjaxValidation'   => true,
-                    'enableClientValidation' => false,
-                    'validateOnBlur'         => false,
-                    'validateOnType'         => false,
-                    'validateOnChange'       => false,
-                ]) ?>
+                <?php
+                $form                          = ActiveForm::begin([
+                        'id'                     => 'login-form',
+                        'enableAjaxValidation'   => true,
+                        'enableClientValidation' => false,
+                        'validateOnBlur'         => false,
+                        'validateOnType'         => false,
+                        'validateOnChange'       => false,
+                    ])
+                ?>
 
                 <?= $form->field($model, 'login', ['inputOptions' => ['autofocus' => 'autofocus', 'class' => 'form-control', 'tabindex' => '1']]) ?>
 
-                <?= $form->field($model, 'password', ['inputOptions' => ['class' => 'form-control', 'tabindex' => '2']])->passwordInput()->label(Yii::t('user', 'Password') . ($module->enablePasswordRecovery ? ' (' . Html::a(Yii::t('user', 'Forgot password?'), ['/user/recovery/request'], ['tabindex' => '5']) . ')' : '')) ?>
+                <?= $form->field($model, 'password', ['inputOptions' => ['class' => 'form-control', 'tabindex' => '2']])->passwordInput()->label(Yii::t('user', 'Password').($module->enablePasswordRecovery ? ' ('.Html::a(Yii::t('user', 'Forgot password?'), ['/user/recovery/request'], ['tabindex' => '5']).')' : '')) ?>
 
                 <?= $form->field($model, 'rememberMe')->checkbox(['tabindex' => '4']) ?>
 
@@ -53,17 +51,19 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
         <?php if ($module->enableConfirmation): ?>
-            <p class="text-center">
+        <p class="text-center">
                 <?= Html::a(Yii::t('user', 'Didn\'t receive confirmation message?'), ['/user/registration/resend']) ?>
             </p>
         <?php endif ?>
         <?php if ($module->enableRegistration): ?>
-            <p class="text-center">
-                <?= Html::a(Yii::t('user', 'Don\'t have an account? Sign up!'), ['/user/registration/register']) ?>
-            </p>
-        <?php endif ?>
-        <?= Connect::widget([
-            'baseAuthUrl' => ['/user/security/auth'],
-        ]) ?>
+                    <p class="text-center">
+                    <?= Html::a(Yii::t('user', 'Don\'t have an account? Sign up!'), ['/user/registration/register']) ?>
+                </p>
+            <?php endif ?>
+            <?=
+            Connect::widget([
+                'baseAuthUrl' => ['/user/security/auth'],
+            ])
+        ?>
     </div>
 </div>

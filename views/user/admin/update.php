@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Dektrium project.
  *
@@ -18,16 +17,10 @@ use yii\web\View;
  * @var User 	$user
  * @var string 	$content
  */
-
-$this->title = Yii::t('user', 'Update user account');
+$this->title                   = Yii::t('user', 'Update user account');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('user', 'Users'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-
 ?>
-
-<?= $this->render('/_alert', [
-    'module' => Yii::$app->getModule('user'),
-]) ?>
 
 <?= $this->render('_menu') ?>
 
@@ -35,61 +28,63 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-3">
         <div class="panel panel-default">
             <div class="panel-body">
-                <?= Nav::widget([
+                <?=
+                Nav::widget([
                     'options' => [
                         'class' => 'nav-pills nav-stacked',
                     ],
-                    'items' => [
+                    'items'   => [
                         ['label' => Yii::t('user', 'Account details'), 'url' => ['/user/admin/update', 'id' => $user->id]],
                         ['label' => Yii::t('user', 'Profile details'), 'url' => ['/user/admin/update-profile', 'id' => $user->id]],
                         ['label' => Yii::t('user', 'Information'), 'url' => ['/user/admin/info', 'id' => $user->id]],
                         [
-                            'label' => Yii::t('user', 'Assignments'),
-                            'url' => ['/user/admin/assignments', 'id' => $user->id],
+                            'label'   => Yii::t('user', 'Assignments'),
+                            'url'     => ['/user/admin/assignments', 'id' => $user->id],
                             'visible' => isset(Yii::$app->extensions['dektrium/yii2-rbac']),
                         ],
                         '<hr>',
                         [
-                            'label' => Yii::t('user', 'Confirm'),
-                            'url'   => ['/user/admin/confirm', 'id' => $user->id],
-                            'visible' => !$user->isConfirmed,
+                            'label'       => Yii::t('user', 'Confirm'),
+                            'url'         => ['/user/admin/confirm', 'id' => $user->id],
+                            'visible'     => !$user->isConfirmed,
                             'linkOptions' => [
-                                'class' => 'text-success',
-                                'data-method' => 'post',
+                                'class'        => 'text-success',
+                                'data-method'  => 'post',
                                 'data-confirm' => Yii::t('user', 'Are you sure you want to confirm this user?'),
                             ],
                         ],
                         [
-                            'label' => Yii::t('user', 'Block'),
-                            'url'   => ['/user/admin/block', 'id' => $user->id],
-                            'visible' => !$user->isBlocked,
+                            'label'       => Yii::t('user', 'Block'),
+                            'url'         => ['/user/admin/block', 'id' => $user->id],
+                            'visible'     => !$user->isBlocked,
                             'linkOptions' => [
-                                'class' => 'text-danger',
-                                'data-method' => 'post',
+                                'class'        => 'text-danger',
+                                'data-method'  => 'post',
                                 'data-confirm' => Yii::t('user', 'Are you sure you want to block this user?'),
                             ],
                         ],
                         [
-                            'label' => Yii::t('user', 'Unblock'),
-                            'url'   => ['/user/admin/block', 'id' => $user->id],
-                            'visible' => $user->isBlocked,
+                            'label'       => Yii::t('user', 'Unblock'),
+                            'url'         => ['/user/admin/block', 'id' => $user->id],
+                            'visible'     => $user->isBlocked,
                             'linkOptions' => [
-                                'class' => 'text-success',
-                                'data-method' => 'post',
+                                'class'        => 'text-success',
+                                'data-method'  => 'post',
                                 'data-confirm' => Yii::t('user', 'Are you sure you want to unblock this user?'),
                             ],
                         ],
                         [
-                            'label' => Yii::t('user', 'Delete'),
-                            'url'   => ['/user/admin/delete', 'id' => $user->id],
+                            'label'       => Yii::t('user', 'Delete'),
+                            'url'         => ['/user/admin/delete', 'id' => $user->id],
                             'linkOptions' => [
-                                'class' => 'text-danger',
-                                'data-method' => 'post',
+                                'class'        => 'text-danger',
+                                'data-method'  => 'post',
                                 'data-confirm' => Yii::t('user', 'Are you sure you want to delete this user?'),
                             ],
                         ],
                     ],
-                ]) ?>
+                ])
+                ?>
             </div>
         </div>
     </div>

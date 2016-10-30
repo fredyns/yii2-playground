@@ -2,6 +2,7 @@
 
 use app\assets\AppAsset;
 use yii\helpers\Html;
+use dmstr\widgets\Alert;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -22,6 +23,7 @@ dmstr\web\AdminLteAsset::register($this);
 
         <?php $this->beginBody() ?>
 
+        <?= Alert::widget() ?>
         <?= $content ?>
 
         <?php $this->endBody() ?>

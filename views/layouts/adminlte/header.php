@@ -27,66 +27,62 @@ use yii\helpers\Html;
 
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-
-                        <?php
-                        $profile = Yii::$app->user->identity->profile;
+                        <div class="pull-left image img-circle" style="width: 25px; height: 25px; overflow: hidden">
+                            <?php
+                            $profile = Yii::$app->user->identity->profile;
 
                         if (!empty($profile->picture_id))
                         {
                             echo Html::img(
-                                ['/file', 'id' => $profile->picture_id],
-                                [
-                                'class'  => 'img-circle',
-                                'height' => 25,
-                                'alt'    => $profile->user->username,
-                                ]
-                            );
+                                    ['/file', 'id' => $profile->picture_id], [
+                                    'alt'   => $profile->user->username,
+                                    'style' => 'max-length: 25px; max-width: 25px;',
+                                    ]
+                                );
                         }
                         else
                         {
-                            Html::img(
-                                '@web/image/user-160.png',
-                                [
-                                'class'  => "img-circle",
-                                'height' => 25,
-                                'alt'    => "User Image",
-                                ]
-                            );
+                                echo Html::img(
+                                    '@web/image/user-160.png', [
+                                    'alt'   => "User Image",
+                                    'style' => 'max-length: 25px; max-width: 25px;',
+                                    ]
+                                );
                         }
                         ?>
+                        </div>
                         <span class="hidden-xs">
-                            <?= Yii::$app->user->identity->username; ?>
+                            &nbsp; <?= Yii::$app->user->identity->username; ?>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <?php
+                            <div class="image img-circle" style="width: 90px; height: 90px; overflow: hidden; margin: 0 auto;">
+                                <?php
                             $profile = Yii::$app->user->identity->profile;
 
                             if (!empty($profile->picture_id))
                             {
 
                                 echo Html::img(
-                                    ['/file', 'id' => $profile->picture_id],
-                                    [
-                                    'class'  => 'img-circle',
-                                    'height' => 25,
-                                    'alt'    => $profile->user->username,
-                                    ]
-                                );
+                                        ['/file', 'id' => $profile->picture_id], [
+                                        'style' => 'max-length: 90px; max-width: 90px;',
+                                        'alt'   => $profile->user->username,
+                                        ]
+                                    );
                             }
                             else
                             {
-                                Html::img(
-                                    '@web/image/user-160.png',
-                                    [
-                                    'class' => "img-circle",
-                                    'alt'   => "User Image",
-                                    ]
+                                    echo Html::img(
+                                        '@web/image/user-160.png', [
+                                        'alt'   => "User Image",
+                                        'style' => 'max-length: 90px; max-width: 90px;',
+                                        ]
                                 );
                             }
                             ?>
+                            </div>
                             <p>
                                 <?php
                                 $name = Yii::$app->user->identity->profile->name;
@@ -114,18 +110,16 @@ use yii\helpers\Html;
                             <div class="pull-left">
                                 <?=
                                 Html::a(
-                                    'Profile', ['/user/profile/show', 'id' => Yii::$app->user->id],
-                                    ['class' => "btn btn-default btn-flat"]
-                                );
-                                ?>
+                                    'Profile', ['/user/profile/show', 'id' => Yii::$app->user->id], ['class' => "btn btn-default btn-flat"]
+);
+?>
                             </div>
                             <div class="pull-right">
                                 <?=
                                 Html::a(
-                                    'Sign out', ['/user/security/logout'],
-                                    ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
-                                )
-                                ?>
+                                    'Sign out', ['/user/security/logout'], ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
+)
+?>
                             </div>
                         </li>
                     </ul>

@@ -19,8 +19,6 @@ $this->title                   = Yii::t('user', 'Profile settings');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<?= $this->render('/_alert', ['module' => Yii::$app->getModule('user')]) ?>
-
 <div class="row">
     <div class="col-md-3">
         <?= $this->render('_menu') ?>
@@ -47,18 +45,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <div class="col-md-4">
                     <?php if (!empty($model->picture_id)): ?>
-                        <p>
+                    <p>
                             <?=
                             Html::img(
-                                ['/file', 'id' => $model->picture_id],
-                                [
-                                'class' => 'img-rounded img-responsive',
-                                'alt'   => $model->user->username,
+                                ['/file', 'id' => $model->picture_id], [
+                                    'class' => 'img-rounded img-responsive',
+                                    'alt'   => $model->user->username,
                                 ]
                             )
                             ?>
-                        </p>
-                    <?php endif; ?>
+                                </p>
+                        <?php endif; ?>
                 </div>
 
                 <div class="clearfix"></div>
